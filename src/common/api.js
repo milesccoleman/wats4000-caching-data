@@ -1,19 +1,15 @@
-// Base API Configuration
-
 import axios from 'axios';
 
 export const API = axios.create({
-    baseURL: '//api.openweathermap.org/data/2.5/'
+	baseURL: '//api.openweathermap.org/data/2.5/'
 });
 
 API.interceptors.request.use(function (config) {
-    // Set common parameters for each request to the API.
+	// Set commmon parameters for each request to the API.
+	config.params.APPID = '80cbd7c1a5fac120ee4b31bf2e561ec5';
+	config.params.units = 'imperial';
 
-    // TODO: Use your own APPID for OpenWeatherMap.org
-    config.params.APPID = 'YOUR_APPID_HERE';
-    config.params.units = 'imperial';
-
-    return config;
+	return config;
 }, function (error) {
-    return Promise.reject(error);
+	return Promise.reject(error);
 });
