@@ -1,7 +1,7 @@
 <template>
     <ul class="favorite-cities">
         <li><h2>Favorite Cities</h2></li>
-        <li v-if="favoriteCities === null">No favorites cities to display.</li>
+        <li v-if="favoriteCities < 1">No favorites cities to display.</li>
         <li v-for="city in favoriteCities">
           <router-link v-bind:to="{ name: 'CurrentWeather', params: { cityId: city.id } }">{{ city.name }}</router-link> <button v-on:click="removeCity(city)" class="remove">x</button>
         </li>

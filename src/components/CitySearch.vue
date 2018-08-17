@@ -1,6 +1,6 @@
 <template>
   <div>
-  <favorite-cities v:bind:favoriteCities="favorites"></favorite-cities>
+  <favorite-cities v-bind:favoriteCities="favorites"></favorite-cities>
     <h2>City Search</h2>
     <message-container v-bind:messages="messages"></message-container>
     <form v-on:submit.prevent="getCities">
